@@ -1,0 +1,67 @@
+/* CABEÇALHO — versão idêntica ao do site principal */
+.site-header{
+  background: linear-gradient(90deg,#0f4ad4,#0b58d1);
+  color:#fff;
+  padding:25px 0;
+}
+
+.header-inner{
+  max-width:1150px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* LOGO + NOME */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.logo{
+  width:85px;
+  height:85px;
+  padding:6px;
+  border-radius:12px;
+  background:white;
+  object-fit:cover;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+
+.brand-text h1{
+  font-size:2rem;
+  font-weight:700;
+}
+
+/* MENU */
+.menu-box ul{
+  display:flex;
+  list-style:none;
+  gap:24px;
+}
+
+.menu-box a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  
+  width:150px;        /* ← TAMANHO FIXO (todos iguais) */
+  height:55px;        /* ← ALTURA FIXA (todos iguais) */
+
+  padding:0;
+  border-radius:14px;
+  background:rgba(255,255,255,0.18);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  text-align:center;
+  transition:.22s;
+}
+
+.menu-box a:hover{
+  background:rgba(255,255,255,0.3);
+  transform:translateY(-3px);
+}

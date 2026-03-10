@@ -1,0 +1,440 @@
+/* ================================
+   CABEÇALHO — idêntico ao sobre.css
+================================ */
+.site-header{
+  background: linear-gradient(90deg,#0f4ad4,#0b58d1);
+  color:#fff;
+  padding:25px 0;
+}
+
+.header-inner{
+  max-width:1150px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* LOGO + NOME */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.logo{
+  width:85px;
+  height:85px;
+  padding:6px;
+  border-radius:12px;
+  background:white;
+  object-fit:cover;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+
+.brand-text h1{
+  font-size:2rem;
+  font-weight:700;
+  margin:0;
+}
+
+/* MENU */
+.menu-box ul{
+  display:flex;
+  list-style:none;
+  gap:24px;
+}
+
+.menu-box a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:150px;
+  height:55px;
+
+  padding:0;
+  border-radius:14px;
+  background:rgba(255,255,255,0.18);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  text-align:center;
+  transition:.22s;
+}
+
+.menu-box a:hover{
+  background:rgba(255,255,255,0.3);
+  transform:translateY(-3px);
+}
+
+/* ==================================
+   IMAGENS DA GALERIA — mantido igual
+=================================== */
+
+.linha-imagens img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+/* VIDEOS */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.video-grid iframe {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border-radius: 10px;
+}
+
+.linha-videos {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.linha-videos video {
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #000;
+}
+/* ================================
+   IMAGENS DA GALERIA — alinhamento horizontal
+================================ */
+
+/* Linha de imagens */
+.linha-imagens {
+  display: flex !important;           /* Flex para alinhamento horizontal */
+  flex-wrap: wrap !important;         /* Quebra para telas menores */
+  justify-content: center !important; /* Centraliza no container */
+  gap: 20px !important;               /* Espaçamento entre imagens */
+  margin-top: 15px !important;
+}
+
+/* Cada imagem */
+.linha-imagens img {
+  width: 250px !important;            /* Mesma largura para todas */
+  height: 250px !important;           /* Mesma altura para todas */
+  object-fit: cover !important;       /* Mantém proporção e recorta */
+  border-radius: 12px !important;     /* Bordas arredondadas */
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25) !important; /* Sombra elegante */
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  display: block !important;
+}
+
+/* Hover efeito */
+.linha-imagens img:hover {
+  transform: scale(1.05) translateY(-4px) !important;
+  box-shadow: 0 12px 28px rgba(0,0,0,0.32) !important;
+}
+
+/* Responsivo: para telas menores */
+@media (max-width: 880px) {
+  .linha-imagens img {
+    width: 200px !important;
+    height: 200px !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .linha-imagens {
+    gap: 12px !important;
+  }
+  .linha-imagens img {
+    width: 150px !important;
+    height: 150px !important;
+  }
+}
+/* Alinha títulos e textos ao centro das galerias */
+.galeria h3,
+.galeria p,
+.titulo-salas {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+/* Mantém as imagens alinhadas horizontalmente */
+.linha-imagens {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+/* Imagens individuais da galeria */
+.linha-imagens img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: block;
+}
+
+.linha-imagens img:hover {
+  transform: scale(1.05) translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.32);
+}
+
+/* Mantém vídeos alinhados horizontalmente */
+.linha-videos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.linha-videos video {
+  width: 250px;
+  height: 250px;
+  border-radius: 12px;
+  object-fit: cover;
+  background: #000;
+}
+/* Barrinha azul e estilo para títulos de seção */
+.titulo-salas,
+.galeria h3 {
+  font-size: 1.6rem;
+  color: #1e3a8a;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 15px;
+  padding-bottom: 6px;
+  border-bottom: 3px solid #3b82f6; /* barrinha azul */
+}
+/* ================================
+   CABEÇALHO — idêntico ao sobre.css
+================================ */
+.site-header{
+  background: linear-gradient(90deg,#0f4ad4,#0b58d1);
+  color:#fff;
+  padding:25px 0;
+}
+
+.header-inner{
+  max-width:1150px;
+  margin:auto;
+  padding:0 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+/* LOGO + NOME */
+.brand{
+  display:flex;
+  align-items:center;
+  gap:16px;
+}
+
+.logo{
+  width:85px;
+  height:85px;
+  padding:6px;
+  border-radius:12px;
+  background:white;
+  object-fit:cover;
+  box-shadow:0 4px 15px rgba(0,0,0,0.25);
+}
+
+.brand-text h1{
+  font-size:2rem;
+  font-weight:700;
+  margin:0;
+}
+
+/* MENU */
+.menu-box ul{
+  display:flex;
+  list-style:none;
+  gap:24px;
+}
+
+.menu-box a{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:150px;
+  height:55px;
+
+  padding:0;
+  border-radius:14px;
+  background:rgba(255,255,255,0.18);
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  text-align:center;
+  transition:.22s;
+}
+
+.menu-box a:hover{
+  background:rgba(255,255,255,0.3);
+  transform:translateY(-3px);
+}
+
+/* ================================
+   GALERIA DE IMAGENS
+=================================== */
+.linha-imagens {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.linha-imagens img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.linha-imagens img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+}
+
+/* ================================
+   GALERIA DE VÍDEOS
+=================================== */
+.linha-videos {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.linha-videos video {
+  width: 220px;
+  height: 220px;
+  border-radius: 10px;
+  object-fit: cover;
+  background: #000;
+}
+
+/* ================================
+   TÍTULOS COM BARRINHA AZUL
+=================================== */
+.titulo-salas,
+.galeria h3 {
+  font-size: 1.35rem;
+  color: #1e3a8a;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  padding-bottom: 5px;
+  border-bottom: 3px solid #3b82f6;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ================================
+   RESPONSIVO
+=================================== */
+@media (max-width:980px){
+  .linha-imagens img,
+  .linha-videos video {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width:560px){
+  .linha-imagens img,
+  .linha-videos video {
+    width: 140px;
+    height: 140px;
+  }
+}
+/* =========================================================
+   CARD DO YOUTUBE — destaques e espaçamento
+========================================================= */
+.videos.card {
+  margin-top: 40px;          /* espaço acima do card */
+  margin-bottom: 60px;       /* espaço abaixo do card */
+  padding: 24px;             /* preenchimento interno */
+  background: linear-gradient(145deg, #e6f0ff, #ffffff); /* gradiente suave */
+  border-radius: 18px;
+  box-shadow: 0 12px 28px rgba(15,74,212,0.25), 0 6px 16px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Título do card */
+.videos.card h3 {
+  color: #0f4ad4;
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+/* Barrinha azul abaixo do título */
+.videos.card h3::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: #0f4ad4;
+  border-radius: 2px;
+  margin: 8px auto 0 auto;
+}
+
+/* Iframe do YouTube */
+.videos.card iframe {
+  width: 100%;
+  max-width: 640px;
+  height: 360px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.12), 0 0 12px rgba(15,74,212,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover suave no iframe */
+.videos.card iframe:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 28px rgba(2,6,23,0.2), 0 0 18px rgba(15,74,212,0.25);
+}
+
+/* Responsivo */
+@media (max-width: 720px) {
+  .videos.card iframe {
+    height: 220px;
+  }
+}
+
+@media (max-width: 480px) {
+  .videos.card {
+    padding: 16px;
+  }
+  .videos.card h3 {
+    font-size: 1.3rem;
+  }
+  .videos.card iframe {
+    height: 180px;
+  }
+}
