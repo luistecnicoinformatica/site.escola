@@ -98,3 +98,6 @@ section.card {
     max-width: 280px !important;
   }
 }
+body {
+  background: red;
+}
