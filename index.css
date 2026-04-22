@@ -1,103 +1,277 @@
-/* ===== AJUSTES PRINCIPAIS (CORREÇÃO DOS ERROS) ===== */
+/* =====================================================
+   INDEX.CSS COMPLETO — LIMPO E FUNCIONAL
+===================================================== */
 
-/* IMAGEM MATRÍCULA - corrigido tamanho */
-.matriculas-img {
-  width: 100% !important;
-  max-width: 350px !important;
-  height: auto !important;
-  display: block !important;
-  margin: 0 auto !important;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-/* GARANTE QUE O CONTAINER NÃO ESTOURE */
-.hero-figure {
-  max-width: 100%;
-  overflow: hidden;
+body{
+  font-family:Arial, Helvetica, sans-serif;
+  background:#f4f7fc;
+  color:#222;
+  line-height:1.6;
 }
 
-/* CARDS (voltando ao normal) */
-.card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  margin-top: 20px;
+/* CONTAINER */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
 }
 
-/* FORÇA VISUAL DOS CARDS */
-section.card {
-  display: block;
+/* HEADER */
+.site-header{
+  background:linear-gradient(90deg,#0f4ad4,#2563eb);
+  color:white;
+  padding:20px 0;
 }
 
-/* MENU COM FUNDO (corrigido) */
-.nav ul {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.header-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-/* LINKS DO MENU */
-.nav ul li a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 160px;
-  padding: 12px;
-
-  background: rgba(255,255,255,0.2);
-  color: white;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 600;
-
-  transition: 0.3s;
+.brand{
+  display:flex;
+  align-items:center;
+  gap:15px;
 }
 
-/* HOVER MENU */
-.nav ul li a:hover {
-  background: rgba(255,255,255,0.35);
-  transform: translateY(-3px);
+.brand img{
+  width:75px;
+  height:75px;
+  border-radius:12px;
+  object-fit:cover;
 }
 
-/* REMOVE CONFLITOS DO !important EXCESSIVO */
-.menu-box a,
-.nav a {
-  backdrop-filter: blur(4px);
+.brand-text h1{
+  font-size:1.4rem;
 }
 
-/* GARANTE QUE OS TEXTOS FIQUEM ORGANIZADOS */
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 24px;
+.brand-text .em{
+  display:block;
+  font-size:1.6rem;
+  font-weight:bold;
 }
 
-/* CORRIGE POSSÍVEL PROBLEMA DE TEXTO SOLTO */
-.texto-livre {
-  background: #fff;
-  padding: 15px;
-  border-radius: 10px;
+/* MENU */
+.nav ul{
+  display:flex;
+  gap:15px;
+  list-style:none;
+  flex-wrap:wrap;
+}
+
+.nav a{
+  background:rgba(255,255,255,.15);
+  color:white;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:10px;
+  font-weight:bold;
+  transition:.3s;
+}
+
+.nav a:hover{
+  background:white;
+  color:#0f4ad4;
+  transform:translateY(-2px);
+}
+
+/* HERO */
+.hero{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  margin-top:25px;
+  box-shadow:0 6px 18px rgba(0,0,0,.08);
+}
+
+.hero-grid{
+  display:grid;
+  grid-template-columns:1fr 380px;
+  gap:30px;
+  align-items:center;
+}
+
+.hero h2{
+  font-size:2rem;
+  color:#0f4ad4;
+  margin-bottom:15px;
+}
+
+.lead{
+  margin-bottom:20px;
+  color:#555;
+}
+
+/* BOTÕES */
+.btn{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+  margin-right:10px;
+}
+
+.btn.primary{
+  background:#0f4ad4;
+  color:white;
+}
+
+.btn.primary:hover{
+  background:#2563eb;
+}
+
+.btn.ghost{
+  border:2px solid #0f4ad4;
+  color:#0f4ad4;
+}
+
+.btn.ghost:hover{
+  background:#0f4ad4;
+  color:white;
+}
+
+/* IMAGEM MATRÍCULA */
+.hero-figure{
+  text-align:center;
+}
+
+.matriculas-img{
+  width:100%;
+  max-width:360px;
+  height:auto;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.hero-figure figcaption{
+  margin-top:12px;
+  font-weight:bold;
+  color:#0f4ad4;
+}
+
+/* FEATURES */
+.features{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin-top:30px;
+}
+
+.feature-card{
+  background:white;
+  padding:22px;
+  border-radius:15px;
+  box-shadow:0 6px 16px rgba(0,0,0,.07);
+}
+
+.feature-card h3{
+  color:#0f4ad4;
+  margin-bottom:10px;
+}
+
+/* CARDS GERAIS */
+.card{
+  background:white;
+  padding:25px;
+  border-radius:15px;
+  box-shadow:0 6px 18px rgba(0,0,0,.07);
+  margin-top:25px;
+}
+
+/* TEXTO */
+.texto-livre p{
+  margin-bottom:15px;
+}
+
+/* WHATSAPP */
+.whatsapp-card{
+  display:flex;
+  gap:15px;
+  align-items:center;
+  background:#ffffff;
+  border-left:5px solid #0f4ad4;
+  padding:20px;
+  border-radius:12px;
+  text-decoration:none;
+  color:#222;
+  box-shadow:0 5px 14px rgba(0,0,0,.08);
+}
+
+.whatsapp-card:hover{
+  transform:translateY(-3px);
+}
+
+.whatsapp-icon{
+  font-size:32px;
+}
+
+.whatsapp-content h3{
+  color:#0f4ad4;
+}
+
+/* FOOTER */
+.site-footer{
+  background:#0f4ad4;
+  color:white;
+  margin-top:40px;
+  padding:30px 0;
+}
+
+.site-footer a{
+  color:#fff;
 }
 
 /* RESPONSIVO */
-@media (max-width: 768px) {
-  .nav ul {
-    flex-direction: column;
-    align-items: center;
+@media(max-width:900px){
+
+  .hero-grid{
+    grid-template-columns:1fr;
+    text-align:center;
   }
 
-  .nav ul li a {
-    width: 90%;
+  .features{
+    grid-template-columns:1fr;
   }
 
-  .matriculas-img {
-    max-width: 280px !important;
+  .nav ul{
+    justify-content:center;
   }
+
 }
-body {
-  background: red;
+
+@media(max-width:600px){
+
+  .brand{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .nav ul{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .nav a{
+    display:block;
+    text-align:center;
+  }
+
+  .hero h2{
+    font-size:1.5rem;
+  }
+
+  .matriculas-img{
+    max-width:280px;
+  }
+
 }
