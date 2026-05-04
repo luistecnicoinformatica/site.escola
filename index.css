@@ -309,3 +309,22 @@ align-items:center;
 .nav ul{
 align-items:center;
 }
+.hero-grid{
+  grid-template-columns: 1fr 300px;
+}
+
+.matriculas-img{
+  max-width: 280px;
+}
+.nav ul li a{
+  background: #ffffff;
+  color: #0f4ad4;
+  font-weight: 700;
+}
+.hero{
+  padding: 50px;
+}
+
+.feature-card{
+  padding: 24px;
+}
