@@ -1,23 +1,26 @@
-// site.js — toggles mobile nav
+// ----------------------
+// MENU MOBILE
+// ----------------------
 document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.getElementById('nav-toggle');
   var nav = document.getElementById('nav');
 
-  toggle && toggle.addEventListener('click', function () {
+  if (!toggle || !nav) return;
+
+  toggle.addEventListener('click', function () {
     var expanded = this.getAttribute('aria-expanded') === 'true';
     this.setAttribute('aria-expanded', (!expanded).toString());
-    if (!expanded) {
-      nav.style.display = 'block';
-    } else {
-      nav.style.display = '';
-    }
+
+    nav.style.display = expanded ? '' : 'block';
   });
 
-  // Close nav when clicking outside on mobile
+  // Fechar menu ao clicar fora (mobile)
   document.addEventListener('click', function (e) {
-    if (!nav.contains(e.target) && !toggle.contains(e.target) && window.innerWidth < 980) {
-      nav.style.display = '';
-      toggle.setAttribute('aria-expanded', 'false');
+    if (window.innerWidth < 980) {
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.style.display = '';
+        toggle.setAttribute('aria-expanded', 'false');
+      }
     }
   });
 });
@@ -31,16 +34,14 @@ function verificarHorario() {
   const hora = agora.getHours();
 
   const box = document.getElementById("statusAtendimento");
+  if (!box) return;
 
-  if (!box) return; // segurança
-
-  // Horário de atendimento: 07:00 às 17:00
   if (hora >= 7 && hora < 17) {
     box.innerText = "🟢 Estamos no horário de atendimento!";
-    box.style.color = "#059669"; // verde
+    box.style.color = "#059669";
   } else {
     box.innerText = "🔴 Fora do horário. Responderemos no próximo expediente.";
-    box.style.color = "#dc2626"; // vermelho
+    box.style.color = "#dc2626";
   }
 }
 
@@ -48,12 +49,9 @@ verificarHorario();
 setInterval(verificarHorario, 60000);
 
 
-
 // ----------------------
-// SISTEMA DE BUSCA GLOBAL
+// BUSCA GLOBAL
 // ----------------------
-
-// Conteúdos que serão pesquisados
 const conteudos = [
   { titulo: "Galeria de Imagens", link: "imagens/imagens.html", tags: "fotos escola eventos" },
   { titulo: "História da Escola", link: "sobre/sobre.html", tags: "historia escola fundação diretoria" },
@@ -61,14 +59,13 @@ const conteudos = [
   { titulo: "Página Inicial", link: "index.html", tags: "início home principal" },
 ];
 
-// Função para criar resultados
 function executarBusca(termo) {
   const resultadosBox = document.getElementById("resultadosBusca");
   if (!resultadosBox) return;
 
   resultadosBox.innerHTML = "";
 
-  if (termo.length < 2) {
+  if (!termo || termo.length < 2) {
     resultadosBox.style.display = "none";
     return;
   }
@@ -96,20 +93,21 @@ function executarBusca(termo) {
   resultadosBox.style.display = "block";
 }
 
-// Ativar apenas se o campo existir na página
 const campoBusca = document.getElementById("campoBusca");
 if (campoBusca) {
   campoBusca.addEventListener("input", function () {
     executarBusca(this.value);
   });
 }
-// Service Worker - Funcionalidade Offline
+
+
+// ----------------------
+// SERVICE WORKER (OFFLINE)
+// ----------------------
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./service-worker.js')
-      .then(() => console.log('✅ Site funcionará offline!'))
-      .catch(() => {
-        console.log('⚠️ Crie o arquivo service-worker.js na raiz do site');
-      });
+    navigator.serviceWorker.register('/site.escola/service-worker.js')
+      .then(() => console.log('✅ Offline ativado (PWA pronto)'))
+      .catch(err => console.log('❌ Erro no Service Worker:', err));
   });
 }
