@@ -1,17 +1,16 @@
-// Service Worker - Cachear arquivos para funcionar offline
-const CACHE_NAME = 'site-v1';
+const CACHE_NAME = 'site-v2';
+
 const urlsToCache = [
-  '/',
-  '/sobre.html',
-  '/contatos.html',
-  '/site.css',
-  '/contatos.css',
-  '/site.js',
-  '/img/logo.jpg',
-  '/img/fachada.jpg'
+  '/site.escola/',
+  '/site.escola/index.html',
+  '/site.escola/sobre.html',
+  '/site.escola/contatos.html',
+  '/site.escola/imagens.html',
+  '/site.escola/index.css',
+  '/site.escola/index.js',
+  '/site.escola/img.logodiva.jpg'
 ];
 
-// Instalar e cachear arquivos
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
@@ -19,7 +18,6 @@ self.addEventListener('install', event => {
   );
 });
 
-// Buscar do cache quando offline
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
@@ -27,7 +25,6 @@ self.addEventListener('fetch', event => {
   );
 });
 
-// Limpar cache antigo
 self.addEventListener('activate', event => {
   event.waitUntil(
     caches.keys().then(cacheNames => {
